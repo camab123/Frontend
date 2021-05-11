@@ -86,7 +86,6 @@ const logout = () => {
   };
 
 export function getApi(url){
-    //console.log('getting stuff')
     return async () => {
       console.log('getting stuff')
       const data = await axiosInstance.get(url) 

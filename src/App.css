@@ -2,8 +2,46 @@
   margin-left: 20px;
 }
 
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  color: #2A3135;
+  background-color: rgb(243, 241, 241);
+}
+.Content-Container {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  max-width: 100%;
+}
+.Content-Row-Performance {
+  position: relative;
+  width:100%;
+  bottom: 9px;
+  margin-left: -0.2rem;
+  height: 100px;
+  
+}
+.Content-Row-Main {
+  margin-left: 1rem;
+}
 input {
   display: block;
   margin: 5px 0 5px;
 }
 
+.nav-item {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  margin-right: 20px;
+}
+
+.nav-item:hover {
+  color: #bec7cc;
+  text-decoration: none;
+}
+
+.side-container {
+  width: 400px;
+}

@@ -2,16 +2,15 @@ import axios from 'axios';
 import { render } from 'react-dom';
 import React, { Component } from 'react';
 import { getApi } from '../utilities/useApi';
-import Market from './market';
-import Performance from './performance';
+import Profile_view from './profile';
 import {
     useQuery,
   } from 'react-query'
 
 
-function HomeContainer() {
+function ProfileContainer() {
     return (
-        <Market/>
+        <Profile_view/>
     )
 }
-export default HomeContainer;
+export default ProfileContainer;

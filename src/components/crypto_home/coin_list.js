@@ -1,15 +1,21 @@
 import { useApi } from '../utilities/useApi'
 import { getApi } from '../utilities/useApi';
+import { Container, Row, Card, Col } from 'react-bootstrap';
+import './crypto_home.css';
 import {
     useQuery,
   } from 'react-query'
 
 function Coins({ name, price }) {
     return (
-        <div>
-            {name}
-            {price}
-        </div>
+        <Row>
+            <Card style={{ width: '18rem' }}>
+                <Card.Body>
+                    <Card.Title>{name}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">{price}</Card.Subtitle>
+                </Card.Body>
+            </Card>
+        </Row>
     )
 }
 
@@ -31,17 +37,21 @@ function Market (){
         console.log(data)
         return (
             <div>
-                <h1>Coins</h1>
+                <Container fluid='md'>
+                <div className="title-text">
+                    Crypto Currencies
+                </div>
+                
                 {
                     data.map(e =>(
                         <Coins
                             name = {e.name}
                             price = {e.price}
                         />
-
                     )
                     )
                 }
+                </Container>
             </div>
         )
 }

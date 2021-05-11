@@ -1,0 +1,38 @@
+.login-form {
+    width: 100%;
+    margin-top: 200px;
+}
+
+.user-form-title {
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 77px;
+    color: #2A3135;
+    text-align: center;
+}
+
+.user-form-description {
+    font-size: 22px;
+    line-height: 27px;
+    color: #868C90;
+}
+.Register-Container {
+    margin-top:100px;
+}
+.user-btn-primary {
+    font-size: 32px;
+    width: 244px;
+    background-color: #21CE99 !important;
+}
+
+.user-btn-secondary, .user-btn-secondary:hover {
+    font-size: 32px;
+    color: #868C90;
+    padding-bottom: 4px;
+    background: linear-gradient(#868C90,#868C90) bottom/100% 2px no-repeat;
+    text-decoration: none;
+}
+
+.user-logo {
+    margin-top: 10%;
+}

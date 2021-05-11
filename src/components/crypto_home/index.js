@@ -1,17 +1,15 @@
 import axios from 'axios';
 import { render } from 'react-dom';
+import Market from './coin_list';
 import React, { Component } from 'react';
 import { getApi } from '../utilities/useApi';
-import Market from './market';
-import Performance from './performance';
 import {
     useQuery,
   } from 'react-query'
 
-
-function HomeContainer() {
+function Crypto_HomeContainer() {
     return (
-        <Market/>
+            <Market/>
     )
 }
-export default HomeContainer;
+export default Crypto_HomeContainer;

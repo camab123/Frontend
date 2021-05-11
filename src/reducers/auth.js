@@ -5,6 +5,8 @@ import { tokens } from './constants';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAIL = 'LOGIN_FAIL';
 export const LOGOUT = 'LOGOUT';
+export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
+export const REGISTER_FAIL = 'REGISTER_FAIL';
 
 // Actions
 export function login(username, password) {
@@ -21,6 +23,24 @@ export function login(username, password) {
         } catch (error) {
             alert(error);
             dispatch({ type: LOGIN_FAIL });
+        }
+    }
+}
+
+export function register(data) {
+    return async dispatch => {
+        try {
+            const response = await axiosInstance.post('/user/create/', data);
+            
+            if (response === undefined) {
+                throw Error("There was a server error!");
+            } else {
+                dispatch({ type: REGISTER_SUCCESS, payload: response.data });
+                dispatch(login(data.username, data.password));
+            }
+        } catch (error) {
+            alert(error);
+            dispatch({ type: REGISTER_FAIL })
         }
     }
 }
@@ -55,7 +75,15 @@ export default function reducer(state = initialState, action) {
                 isLoading: false,
             };
         }
+        case REGISTER_SUCCESS: {
+            return {
+                ...state,
+                isAuthenticated: false,
+                isLoading: true,
+            };
+        }
         case LOGIN_FAIL:
+        case REGISTER_FAIL:
         case LOGOUT: {
             localStorage.removeItem(tokens.ACCESS);
             localStorage.removeItem(tokens.REFRESH);
